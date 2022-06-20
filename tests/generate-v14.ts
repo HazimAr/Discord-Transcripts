@@ -7,7 +7,6 @@ const client = new discord.Client({
 });
 
 client.on('ready', async () => {
-    /** @type {discord.TextChannel} */
     const channel = await client.channels.fetch(process.env.CHANNEL!);
 
     if(!channel || !channel.isTextBased() || channel.type === ChannelType.DM || channel.type === ChannelType.GuildNews) {
